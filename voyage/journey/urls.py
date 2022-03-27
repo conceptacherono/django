@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns=[ 
     re_path('^$', views.images, name = 'Images'),
-     re_path('^$', views.news_of_day, name = 'newsToday'),
+    re_path('^search/', views.search_results, name = 'search_results'),
 ]
 
 if settings.DEBUG:

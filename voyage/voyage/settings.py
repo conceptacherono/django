@@ -79,8 +79,8 @@ WSGI_APPLICATION = 'voyage.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'voyage',
-        'USER': 'voyage',
+        'NAME': 'postgres',       
+        'USER': 'postgres',
         'PASSWORD': 'Laila@01',
     }
 }
@@ -120,11 +120,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-import os
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

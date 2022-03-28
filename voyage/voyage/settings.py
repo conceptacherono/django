@@ -13,10 +13,11 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 
-# cloudinary
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,7 +28,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-8-%5-!b02m8)t(j3-99$8^-nii2+)&jzbs^wkvqf$$la2-a(ao'
 
-
+cloudinary.config( 
+  cloud_name = "dqqjcjeja", 
+  api_key = "486896189457733", 
+  api_secret = "S_UQZBbWD-hRnOVvp_hO1MECo_k" 
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -128,13 +133,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
-
-#.........
 MEDIA_URL = '/media/'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 
 # Default primary key field type

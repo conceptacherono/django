@@ -41,8 +41,8 @@ class CategoryTestClass(TestCase):
     def test_delete_method(self):
         self.Food.delete_category('Football')
         category = Category.objects.all()
-        self.assertTrue(len(category)==0)     
-        
+        self.assertTrue(len(category)==0)
+
 class ImageTestClass(TestCase):
     def setUp(self):
         self.test_category = Category(category=list('Football'))
@@ -58,3 +58,7 @@ class ImageTestClass(TestCase):
         Category.objects.all().delete()
         Location.objects.all().delete()
         Image.objects.all().delete()
+
+    #def test_save_image(self):
+        #images = Image.objects.all()
+        #self.assertTrue(len(images)>0)

@@ -1,8 +1,8 @@
+import django
 from django.db import models
 import datetime as dt
 from django.db.models import Q
 from cloudinary.models import CloudinaryField
-
 
 # Create your models here.
 class Location(models.Model):
@@ -38,15 +38,14 @@ class Category(models.Model):
         cls.objects.filter(category=category).delete()
 
     def __str__(self):
-        return self.category       
+        return self.category        
 
 class Image(models.Model):
     title=models.CharField(max_length=60)
     categories = models.ManyToManyField(Category)
     location = models.ForeignKey(Location,on_delete=models.CASCADE)
-    #image = models.ImageField(upload_to='images/')
-    image = CloudinaryField('image')
     post_date = models.DateTimeField(auto_now_add=True)
+    django_image = models.ImageField(upload_to ='images.html/')
 
     def save_image(self):
         self.save()
